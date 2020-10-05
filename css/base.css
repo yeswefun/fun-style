@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.wrap-300 {
+    width: 300px;
+    margin: 0 auto;
+}
+
+.wrap-720 {
+    width: 720px;
+    margin: 0 auto;
+}
+
+.wrap-960 {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.pt-60 {padding-top: 60px;}
+.pt-120 {padding-top: 120px;}
+
+.pb-60 {padding-bottom: 60px;}
+.pb-120 {padding-bottom: 120px;}
+

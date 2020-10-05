@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带三角的提示框</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+
+        .panel {
+            z-index: 10;
+            position: absolute;
+            top: 58px;
+            width: 94px;
+            border: 1px solid #e5e9ef;
+            border-radius: 8px;
+            box-shadow: 0 11px 12px 0 rgba(106,115,133,0.12);
+            background: #fff;
+            text-align: center;
+            color: #222;
+            cursor: pointer;
+        }
+
+        .panel:hover { color: #f00;}
+
+        .panel:after {
+            content: "";
+            display: block;
+            z-index: 11;
+            position: absolute;
+            top: -5px;
+            right: 12px;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+            /* 关键代码 */
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(45deg);
+        }
+
+        .panel:first-child {
+            padding-top: 18px;
+        }
+        .panel:last-child {
+            padding-bottom: 18px;
+        }
+
+    </style>
+
+</head>
+<body> 
+
+    <div class="wrap-300">
+
+        <div class="panel">
+            <p class="panel-button">举报</p>
+        </div>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带三角的提示框</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+
+        /* 
+            r - right
+            l - left
+            
+            t - top
+            b - bottom
+
+            u - up
+            d - down
+         */
+
+        .panel:nth-child(1) {top: 60px;}
+        .panel:nth-child(2) {top: 160px;}
+        .panel:nth-child(3) {top: 260px;}
+        .panel:nth-child(4) {top: 360px;}
+        .panel:nth-child(5) {top: 460px;}
+        .panel:nth-child(6) {top: 560px;}
+        .panel:nth-child(7) {top: 660px;}
+        .panel:nth-child(8) {top: 760px;}
+
+        .panel {
+            z-index: 10;
+            position: absolute;
+            width: 94px;
+            border: 1px solid #e5e9ef;
+            border-radius: 8px;
+            box-shadow: 0 11px 12px 0 rgba(106,115,133,0.12);
+            background: #fff;
+            text-align: center;
+            color: #222;
+            cursor: pointer;
+        }
+
+        .panel:hover { color: #f00;}
+
+        .panel:after {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 11;
+            width: 8px;
+            height: 8px;
+            background: #fff;
+        }
+
+        .pos-r-t:after {
+            top: -5px;
+            right: 12px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(45deg);
+        }
+
+        .pos-r-b:after {
+            bottom: -5px;
+            right: 12px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(-135deg);
+        }
+        
+        .pos-r-u:after {
+            top: 12px;
+            right: -5px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(135deg);
+        }
+
+        .pos-r-d:after {
+            bottom: 12px;
+            right: -5px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(135deg);
+        }
+
+        .pos-l-t:after {
+            top: -5px;
+            left: 12px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(45deg);
+        }
+
+        .pos-l-b:after {
+            bottom: -5px;
+            left: 12px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(-135deg);
+        }
+
+        .pos-l-u:after {
+            top: 12px;
+            left: -5px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(-45deg);
+        }
+
+        .pos-l-d:after {
+            bottom: 12px;
+            left: -5px;
+            border-top: 1px solid #e5e9ef;
+            border-left: 1px solid #e5e9ef;
+            transform: rotate(-45deg);
+        }
+
+        .panel-button {
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+    </style>
+
+</head>
+<body style="height: 1000px;"> 
+
+    <div class="wrap-300">
+
+
+        <!-- 右上 / 右下 -->
+        <div class="panel pos-r-t">
+            <p class="panel-button">举报 r-t</p>
+        </div>
+
+        <div class="panel pos-r-b">
+            <p class="panel-button">举报 r-b</p>
+        </div>
+
+
+        <!-- r-u / r-d -->
+        <div class="panel pos-r-u">
+            <p class="panel-button">举报 r-u</p>
+        </div>
+
+        <div class="panel pos-r-d">
+            <p class="panel-button">举报 r-d</p>
+        </div>
+
+
+        <!-- 左上 / 左下 -->
+        <div class="panel pos-l-t">
+            <p class="panel-button">举报 l-t</p>
+        </div>
+
+        <div class="panel pos-l-b">
+            <p class="panel-button">举报 l-b</p>
+        </div>
+
+
+        <!-- l-u / l-d -->
+        <div class="panel pos-l-u">
+            <p class="panel-button">举报 l-u</p>
+        </div>
+
+        <div class="panel pos-l-d">
+            <p class="panel-button">举报 l-d</p>
+        </div>
+
+    </div>
+
+</body>
+</html>
