@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>volume</title>
+	<link rel="stylesheet" href="./css/base.css">
+</head>
+<body>
+	
+	<div class="pt-120"></div>
+
+	<div class="wrap-300">当前音量:<span class="volume-value">100</span></div>
+
+
+<script>
+/*
+	e = e || event         - ie8
+	事件绑定                - ie8不支持 x.addEventListener, this, 顺序
+	鼠标滚动                - ff (DOMMouseScroll), chrome(mousewheel)
+
+	chrome/ie9+:
+		up: 120
+		down: -120
+
+	firefox
+		up: -3
+		down: 3
+*/
+
+let doc = document
+let volumeValue = doc.querySelector('.volume-value')
+
+// ff
+doc.addEventListener('DOMMouseScroll', scrollFn)
+// chrome / ie9+
+doc.addEventListener('mousewheel', scrollFn)
+
+let delta = 5
+let value = 100
+function scrollFn(e) {
+	
+	// up: postive, down: negative
+	let flag = (e.wheelDelta || -e.detail) > 0 ? 1 : -1
+	
+	// increment
+	value += flag * delta
+	
+	// [0, 100]
+	if (value < 0) {
+		value = 0
+	} else if (value > 100) {
+		value = 100
+	}
+	
+	// show value
+	volumeValue.innerHTML = value
+}
+</script>
+
+</body>
+</html>

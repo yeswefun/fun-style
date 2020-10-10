@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模态框布局</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <style>
+        .model-mask {
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, .5);
+        }
+
+        .model-box {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 500px;
+            height: 300px;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+    </style>
+</head>
+<body style="height:2000px">
+
+    <div class="model-mask">
+        
+        <div class="model-box"></div>
+
+    </div>
+
+</body>
+</html>

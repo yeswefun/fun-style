@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>宽度设置为auto与100%的区别</title>
+	<link rel="stylesheet" href="./css/base.css">
+	<style>
+
+		/* 盒子模型 */
+		.box {
+			width: 100px;
+			height: 100px;
+			padding: 20px;
+			border: 10px solid red;
+			margin: 30px;
+		}
+		.box.content-box{
+			box-sizing:content-box;
+		}
+		.box.border-box{
+			box-sizing:border-box;
+		}
+
+		/* auto 与 100p */
+		.demo-auto {
+			width: auto;
+			height: 60px;
+			padding: 0 100px;
+			background-color: pink;
+		}
+
+		.demo-100p {
+			width: 100%;
+			height: 60px;
+			padding: 0 100px;
+			background-color: teal;
+		}
+
+		.demo-overflow {
+			overflow-x: auto;
+		}
+
+	</style>
+
+</head>
+<body>
+	
+<!--
+盒子模型:
+	content-box
+		width（box） = width（content）
+	
+	border-box
+		width（box） = border + padding + width（content）
+
+	注: 可以通过 box-sizing 这个css属性来设置盒子模型
+-->
+
+	<div class="pt-120"></div>
+
+	<div class="wrap-300">
+		<div class="box">default</div>
+			<div class="box content-box">content-box</div>
+			<div class="box border-box">border-box</div>
+	</div>
+
+
+	<div class="pb-120"><hr></div>
+
+<!--
+width设置为auto与100%的区别
+
+	1. div不显式设置宽度，则宽度的默认值为auto，即盒子模型中内容部分（content）的宽度
+
+	2. div的width为100%表示的是此div盒子内容部分（content）的宽度为其父元素的宽度
+
+	3. div的width不显式设置，或者设置为auto,那么表示的这个div的所有部分（内容, 内边距, 边框等的距离加起来）为父元素宽度
+-->
+	<div class="wrap-300">
+		<div class="demo-auto  demo-overflow"></div>
+	</div>
+
+
+	<div class="pt-120"></div>
+
+
+	<div class="wrap-300 demo-overflow">
+		<div class="demo-100p"></div>
+	</div>
+
+	<div class="pb-120"></div>
+
+</body>
+</html>
